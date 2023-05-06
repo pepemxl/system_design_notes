@@ -36,6 +36,26 @@ Desarrollaremos las herramientas necesarias para escalar las aplicaciones y reut
 - New Relic: Es una plataforma de monitoreo de aplicaciones en la nube que ayuda a los equipos de desarrollo y operaciones a identificar problemas en las aplicaciones y servicios.
 
 
+Para poder crear aplicaciones lo más realista posible pasaremos algún tiempo seteando servicios gratuitos de sistemas third party comunes en la industria.
+
+
+1. ESCALAR UN SISTEMA
+    1. [Como escalar de cero a millones de usuarios.](documentation/como_escalar_de_cero_a_millones_de_usuarios/01_section_escalamiento.md)
+    2. [Estimando sobre la marcha.](documentation/como_escalar_de_cero_a_millones_de_usuarios/02_section_estimacion.md)
+2. DISEÑO DE UN SISTEMA DE PAGOS
+3. DISEÑO DE UN ACORTADOR DE URL
+4. DISEÑO DE UN SISTEMA DE NOTIFICACIONES
+5. DISEÑO DE UN SISTEMA DE DONACIONES
+6. DISEÑO DE UN SISTEMA NEWS FEED
+7. DISEÑO DE UN LIMITADOR DE TARIFAS (RATE LIMITER)
+8. DISEÑO DE HASHING CONSISTENTE
+9. DISEÑO DE UNA ALMACEN DE CLAVES-VALOR
+10. DISEÑO DE UN GENERADOR DE IDENTIFICADORES ÚNICOS EN SISTEMAS DISTRIBUIDOS
+11. DISEÑO DE UN WEB-CRAWLER
+12. DISEÑO DE UN SISTEMA DE CHAT
+13. DISEÑO DE UN SISTEMA DE AUTOCOMPLETADO DE BÚSQUEDAS
+14. DISEÑO DE YOUTUBE
+15. DISEÑO DE GOOGLE DRIVE
 
 
 
