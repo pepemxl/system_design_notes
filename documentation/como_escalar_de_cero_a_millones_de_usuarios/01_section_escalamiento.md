@@ -109,18 +109,19 @@ ahora hagamos una prueba de carga con [link](./../../monorepo/00_scaling/test/fl
 
 obtenemos la siguiente salida:
 
+
+Sin usar Cache:
 ```bash
-Test on url: http://localhost:5000/
-Total time: 1.0123414993286133 seconds
-Requests per second: 98.78089564274524
 Test on url: http://localhost:5001/
 Total time: 100.52343368530273 seconds
 Requests per second: 0.994792918764182
 ```
-
-
-
-
+Usando Cache:
+```bash
+Test on url: http://localhost:5000/
+Total time: 1.0123414993286133 seconds
+Requests per second: 98.78089564274524
+```
 
 
 
