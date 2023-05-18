@@ -1,0 +1,9 @@
+{% for product in products %}
+  <h2>{{ product.name }}</h2>
+  <p>Precio: ${{ product.price }}</p>
+{% endfor %}
+<p>Total: ${{ total_price }}</p>
+<form action="{% url 'payment_process' %}" method="POST">
+  <!-- Aquí deberías agregar los campos del formulario de pago de Visa -->
+  <input type="submit" value="Pagar">
+</form>

@@ -1,0 +1,10 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" min="0">
+    <br>
+    <label for="recipient">Recipient:</label>
+    <input type="text" id="recipient" name="recipient">
+    <br>
+    <input type="submit" value="Send">
+</form>

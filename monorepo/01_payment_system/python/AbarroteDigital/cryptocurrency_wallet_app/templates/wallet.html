@@ -1,0 +1,10 @@
+<h1>Wallet balance: {{ wallet.balance }}</h1>
+
+<h2>Transaction history</h2>
+{% for transaction in transactions %}
+    {% if transaction.amount < 0 %}
+        <p>Sent {{ -transaction.amount }} on {{ transaction.timestamp }}</p>
+    {% else %}
+        <p>Received {{ transaction.amount }} on {{ transaction.timestamp }}</p>
+    {% endif %}
+{% endfor %}
