@@ -29,8 +29,8 @@ from store.views import PaymentConfirmationView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('wallet/', include('cryptocurrency_wallet_app.urls')),
-	path('', ProductListView.as_view(), name='product_list'),
+    #path('wallet/', include('cryptocurrency_wallet_app.urls')),
+    path('', ProductListView.as_view(), name='product_list'),
     path('add-to-cart/<int:product_id>/', AddToCartView.as_view(), name='add_to_cart'),
     path('cart/', CartView.as_view(), name='cart'),
     path('checkout/', CheckoutView.as_view(), name='checkout'),

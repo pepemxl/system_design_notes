@@ -3,11 +3,16 @@ from django.views import View
 from django.contrib import messages
 from .models import Product
 
+from django.conf import settings
 
 # Create your views here.
 
 class ProductListView(View):
     def get(self, request):
+        products = Product.objects.all()
+        return render(request, 'store/product_list.html', {'products': products})
+    
+    def product_list(request):
         products = Product.objects.all()
         return render(request, 'store/product_list.html', {'products': products})
 

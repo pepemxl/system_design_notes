@@ -1,0 +1,44 @@
+[
+    {
+      "model": "store.category",
+      "pk": 1,
+      "fields": {
+        "name": "Procesadores"
+      }
+    },
+    {
+      "model": "store.category",
+      "pk": 2,
+      "fields": {
+        "name": "Tarjetas gráficas"
+      }
+    },
+    {
+        "model": "store.category",
+        "pk": 3,
+        "fields": {
+          "name": "Memoria RAM"
+        }
+      },
+    {
+      "model": "store.product",
+      "pk": 1,
+      "fields": {
+        "name": "Smartphone",
+        "description": "A high-end smartphone",
+        "price": 999.99,
+        "category": 1
+      }
+    },
+    {
+      "model": "store.product",
+      "pk": 2,
+      "fields": {
+        "name": "T-Shirt",
+        "description": "A comfortable t-shirt",
+        "price": 19.99,
+        "category": 2
+      }
+    }
+  ]
+  
