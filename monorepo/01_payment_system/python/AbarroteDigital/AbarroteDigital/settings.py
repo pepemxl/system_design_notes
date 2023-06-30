@@ -25,6 +25,7 @@ sys.path.append(LIBRARY_DIR)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-q982y6%-g6=98^m%mu5gzpyac_e9%4y9=d82mkeq@o+n+duev='
+STRIPE_SECRET_KEY = 'stripe-insecure-test-key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

@@ -1,0 +1,10 @@
+[Event Handler Diagram]
+
+[Event] Compra de Productos y Servicios
+[Handler] Fulfillment Service
+[Parameters] Product ID, Quantity, Customer ID, Shipping Address
+[Flow]
+1. El usuario envia una orden de compra.
+2. El fulfillment service o servicio de cumplimiento recibe la orden de compra y valida la informacion del cliente.
+3. El fulfillment service revisa que el producto se encuentre en inventario y envia el producto al cliente.
+4. El fulfillment service envia el email de  confirmación al cliente.

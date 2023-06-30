@@ -1,0 +1,27 @@
+---
+Compras - Event Handler
+---
+flowchart TD
+    start(["`Usuario envia orden de compra
+    {Product ID, Quantity, Customer ID, Shipping Address}`"])
+    fulfillment_service(Fulfillment Service)
+    start-->fulfillment_service
+    validador{"`Valida la información 
+    enviada del cliente`"}
+    fulfillment_service-->validador
+    NotProduct["Actualiza estado de producto a cliente"]
+    validador--> |No producto | NotProduct
+    NotAddress["Actualiza estado de dirección a cliente"]
+    validador--> |Address no reconocida | NotAddress
+    valida_address[ Address Checker Service]
+    sender_product[Envia el producto al cliente]
+    validador--> | Revisa producto en inventario| id1[(Database)]
+    validador--> |Valida Address | valida_address 
+    checkout{"`Checkout Payment 
+    System`"}
+    id1 & valida_address ==> checkout
+    checkout ==> |Confirmado Pago| sender_product
+    confirmation[ Enviar correo de confirmación a cliente]    
+    sender_product==>confirmation
+    sender_deny[Envia correo con error de pago]
+    checkout ==> |Pago Denegado| sender_deny

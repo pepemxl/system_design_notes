@@ -1,11 +1,16 @@
 # Requerimientos de para nuestro sistema de pagos
 
-Un sistema de pagos que democratice las opciones de pagos para los trabajadores independientes podría ser una plataforma digital que permita realizar transacciones de manera fácil, rápida y segura. Este sistema debería integrar diferentes opciones de pago, como transferencias bancarias, pagos con tarjeta de crédito y débito, así como pagos con criptomonedas.
+Un sistema de pagos que democratice las opciones de pagos para los trabajadores independientes, a travez de una plataforma digital que permita realizar transacciones de manera fácil, rápida y segura. Este sistema integra diferentes opciones de pago, como:
+- transferencias bancarias, 
+- pagos con tarjeta de crédito y débito, 
+- así como pagos con criptomonedas.
 
-Además, este sistema debería tener una interfaz sencilla e intuitiva para que los trabajadores independientes puedan realizar sus transacciones sin dificultad. También sería importante que esta plataforma brinde información detallada sobre las comisiones y tarifas asociadas a cada opción de pago para que los usuarios puedan tomar decisiones informadas.
+Con interfaz sencilla e intuitiva para que los trabajadores independientes pueden realizar sus transacciones sin dificultad. 
 
-Este sistema de pagos debería ofrecer opciones de seguridad robustas para proteger las transacciones de los usuarios.   
-    - implementar autenticación de dos factores y encriptación de datos sensibles.
+Esta plataforma brinda información detallada sobre las comisiones y tarifas asociadas a cada opción de pago para que los usuarios puedan tomar decisiones informadas.
+
+Este sistema de pagos debería ofrecer opciones de seguridad robustas para proteger las transacciones de los usuarios:
+- implementar autenticación de dos factores y encriptación de datos sensibles.
 
 Otra característica que podría tener este sistema de pagos es la capacidad de generar reportes de ingresos y gastos para que los trabajadores independientes puedan llevar un mejor control de sus finanzas y facilitar la presentación de sus impuestos.
 
