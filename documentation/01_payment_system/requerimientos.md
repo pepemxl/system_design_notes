@@ -1,11 +1,15 @@
 # Requerimientos de para nuestro sistema de pagos
 
-Un sistema de pagos que democratice las opciones de pagos para los trabajadores independientes, a travez de una plataforma digital que permita realizar transacciones de manera fácil, rápida y segura. Este sistema integra diferentes opciones de pago, como:
+Un sistema de pagos que democratice las opciones de pagos para los trabajadores digitales independientes, a travez 
+de una plataforma digital que permita realizar transacciones de manera fácil, rápida y segura para america latina y el mundo. 
+
+Este sistema integra diferentes opciones de pago, como:
+
 - transferencias bancarias, 
 - pagos con tarjeta de crédito y débito, 
 - así como pagos con criptomonedas.
 
-Con interfaz sencilla e intuitiva para que los trabajadores independientes pueden realizar sus transacciones sin dificultad. 
+Con una interfaz sencilla e intuitiva para que los trabajadores independientes pueden realizar sus transacciones sin dificultad. 
 
 Esta plataforma brinda información detallada sobre las comisiones y tarifas asociadas a cada opción de pago para que los usuarios puedan tomar decisiones informadas.
 

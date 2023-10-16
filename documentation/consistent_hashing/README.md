@@ -133,8 +133,10 @@ flowchart TD
             cache4["`Cache 4`"]
             cacheN["`Cache N`"]
         end
+        hash2["`hash(user_id)`"]
         server1 -.-> cache1
-        server1 --> cache2
+        server1 --> hash2
+        hash2 --> cache2
         server1 -.-> cache3
         server1 -.-> cache4
         server1 -.-> cacheN
