@@ -119,6 +119,15 @@ Después de mapear una llave en una posición sobre un hash ring, caminamos en s
 - Si `W+R > N`, tenemos consistencia fuerte, usualmente `N=3`, `W=R=2`.
 - `R = 1` y `W = N` significa que el sistema esta optimizado para lectura.
 - `W = 1` y `R = N` significa que el sistema esta optimizado para escritura.
+- Escoger lenguaje para implementar
+    - python
+    - cpp
+    - java
+- Escoger librería para el manejo de eventos asíncronos
+    - python:
+        - gevent
+        - greenlets
+        - twisted
 - Escoger OS
     - Ubuntu 20.04
     - Alpine
@@ -126,6 +135,10 @@ Después de mapear una llave en una posición sobre un hash ring, caminamos en s
     - MySQL
     - LMDB
     - Mongo
+- Crear un watcher
+    - Revisara el estado al engine
+- Crear/diseñar un heartbeat
+    - Definir tiempo y mecanismos de reinicio
 
 
 
