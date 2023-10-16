@@ -132,6 +132,8 @@ Después de mapear una llave en una posición sobre un hash ring, caminamos en s
     - Ubuntu 20.04
     - Alpine
 - Escoger engine para guardar datos en cada nodo
+    - csv, json
+    - SQLlite
     - MySQL
     - LMDB
     - Mongo
