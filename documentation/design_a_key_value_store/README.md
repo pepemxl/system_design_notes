@@ -111,16 +111,19 @@ Después de mapear una llave en una posición sobre un hash ring, caminamos en s
 
 
 ## Crearemos un docker con los siguientes elementos
-
+- Iniciaremos con docker-compose para la parte de desarrollo
 - `N`: número de servidores para nuestra base de datos
 - `W`: número de servidores para el quorum, es el número de copias que deben estar de acuerdo para considerar que una escritura ha sido exitosa.
 - `R`: número de servidores para considerar una lectura como exitosa.
-
 - Si `W+R > N`, tenemos consistencia fuerte, usualmente `N=3`, `W=R=2`.
+    - Probaremos con `N = 3, pero le daremos distintos tamaños `de memoria máximos a cada servidor.
+        - 1GB
+        - 2GB
+        - 3GB
 - `R = 1` y `W = N` significa que el sistema esta optimizado para lectura.
 - `W = 1` y `R = N` significa que el sistema esta optimizado para escritura.
 - Escoger lenguaje para implementar
-    - python
+    - [X] python
     - cpp
     - java
 - Escoger librería para el manejo de eventos asíncronos
@@ -128,11 +131,14 @@ Después de mapear una llave en una posición sobre un hash ring, caminamos en s
         - gevent
         - greenlets
         - twisted
+- Escoger medio de mensajes
+    - [X] Kafka sin zookeper
+    - Kafka (usualmente +zookeper)
 - Escoger OS
-    - Ubuntu 20.04
-    - Alpine
+    - [X] Ubuntu 20.04 (image base ~ 700MB)
+    - Alpine (image base ~ 35MB)
 - Escoger engine para guardar datos en cada nodo
-    - csv, json
+    - [X] csv, json
     - SQLlite
     - MySQL
     - LMDB
@@ -142,8 +148,43 @@ Después de mapear una llave en una posición sobre un hash ring, caminamos en s
 - Crear/diseñar un heartbeat
     - Definir tiempo y mecanismos de reinicio
 
+### Flujo
 
+```mermaid
+flowchart LR
+    Cliente -->|write request| Kafka
+    Kafka <-->|lee datos nuevos| Consumer(Consumidor Worker)
+    Consumer -->|write/read| ReplicaSet(Coordinador del ReplicaSet)
+    ReplicaSet <-->|check status| HeartBeat
+    ReplicaSet -->|write| VirtualNodes
+    ReplicaSet <-->|read| VirtualNodes
+```
 
+## Plan para usar hash consistente en nuestra key value store.
+
+```mermaid
+flowchart LR
+    HASH1(dato a escribir) -->|hash| WRITE(sabes nodo donde se escribe)
+    WRITE --> REPLICACION(En nodos reales)
+```
+
+### TASK
+- Configuración de docker compose
+    - Tres nodos de base de datos
+    - Kafka
+    - Cliente
+        - Flask con Kafka
+- GRPC para sincronizar nodos
+- Crear la lógica de nodos virtuales
+    - Revisar estrategia y proponer plan
+- Crear lógica de escritura a json
+    - guardar un solo archivo
+        - `path_db.json`
+            - `json[key] = new value`
+        - [X] `path_db_<name-schema>_<name-collection>.json`
+            - `json[key] = new value`
+    - guardar archivo por write
+        - `db_hash(key).json`
 
 
 
