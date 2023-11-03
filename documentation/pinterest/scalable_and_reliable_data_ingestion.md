@@ -56,7 +56,7 @@ Para abordar estos problemas, se mejoraron varias etapas de la ingesta de datos.
 - Para el registro(logging) de servicios en línea, en lugar de escribir directamente en Kafka, los servicios escriben mensajes de registro(logs) en el disco local.
 - Se creo un agente de registro(logs) de alto rendimiento llamado **Singer** que carga mensajes de registro(de los logs) desde los hosts a Kafka. Singer admite múltiples formatos de registro(logs) y garantiza la entrega al menos una vez de los mensajes de registro(logs).
 - Se desarrollo [**Secor**](https://github.com/pinterest/secor) y se creo un servicio de persistencia de datos llamado **Merced** para mover datos de Kafka a S3. Merced utiliza un consumidor de bajo nivel para leer mensajes de Kafka y emplea un enfoque de trabajador maestro para distribuir cargas de trabajo persistentes de datos entre los trabajadores(Workers). Merced garantiza la persistencia de mensajes exactamente una vez desde Kafka a S3.
-- Se agregó una etapa de desinfección al proceso para tareas de sanitización de datos, por ejemplo:
+- Se agregó una etapa de sanitización de datos, con tareas por ejemplo:
     - verificación de cumplimiento de esquemas, 
     - deduplicación, 
     - cumplimiento de políticas de datos y más.
