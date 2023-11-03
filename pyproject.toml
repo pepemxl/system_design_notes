@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "sdi"
+version = "0.1.0"
+description = ""
+authors = [
+    "Jose Luis Alonzo Velazquez" <pepemxl@gmail.com>,
+    "Ernesto Ortega Trujillo" <eortru@gmail.com>
+]
+readme = REAME.md
+reporsitory = "git@github.com:pepemxl/system_design_notes.git"
+packages = [{ include "monorepo", from = "app"}]
+[tool.poetry.dependencies]
+python = "3.8.*"
+termcolor = "^2.3.0"
+pygments = "^2.15.1"
+requests = "^2.31.0"
+flatten-json = "^0.1.13"
+
+[tool.poetry.group.dev.dependencies]
+pytest = '*'
+ipython = '*'
+coverage = '*'
+pre-commit = '*'
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
