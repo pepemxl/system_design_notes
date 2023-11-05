@@ -1,14 +1,14 @@
 [tool.poetry]
 name = "sdi"
-version = "0.1.0"
-description = ""
-authors = [
-    "Jose Luis Alonzo Velazquez" <pepemxl@gmail.com>,
-    "Ernesto Ortega Trujillo" <eortru@gmail.com>
+description = "SDI monorepo"
+authors = ["Jose Luis Alonzo Velazquez <pepemxl@gmail.com>", "Ernesto Ortega Trujillo <eortru@gmail.com>"]
+readme = "README.md"
+repository = "git@github.com:pepemxl/system_design_notes.git"
+version = "0.0.3"
+packages = [ {include="monorepo"},
+{ include="utils.py", from="monorepo"},
+{ include="common", from="monorepo"},
 ]
-readme = REAME.md
-reporsitory = "git@github.com:pepemxl/system_design_notes.git"
-packages = [{ include "monorepo", from = "app"}]
 [tool.poetry.dependencies]
 python = "3.8.*"
 termcolor = "^2.3.0"
@@ -21,6 +21,12 @@ pytest = '*'
 ipython = '*'
 coverage = '*'
 pre-commit = '*'
+
+[tool.poetry.group.test.dependencies]
+pytest = "*"
+
+[tool.poetry.scripts]
+sdi = 'monorepo.__main__:main'
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

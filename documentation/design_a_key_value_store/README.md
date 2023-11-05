@@ -139,7 +139,10 @@ Después de mapear una llave en una posición sobre un hash ring, caminamos en s
     - Alpine (image base ~ 35MB)
 - Escoger engine para guardar datos en cada nodo
     - [X] csv, json
-    - SQLlite
+        - ejemplo: local_path_servidor/servicio/nombre_servicio.json
+        - cambiar a: local_path_servidor/
+        - (ruta_relativa_archivo, hash)
+    - [X] SQLlite
     - MySQL
     - LMDB
     - Mongo
