@@ -35,13 +35,32 @@ def main(sys_argv=None) -> None:
     )
     parser.add_argument(
         '--version',
+        '-v',
         action='version',
         version=f"%(prog)s {VERSION}"
+    )
+    parser.add_argument(
+        '--start',
+        type=str
+    )
+    parser.add_argument(
+        '--stop',
+        type=str
+    )
+    parser.add_argument(
+        '--restart',
+        type=str
+    )
+    parser.add_argument(
+        '--status',
+        type=str
     )
     sys_argv = sys_argv or sys.argv[1:]
     args = parser.parse_args(sys_argv)
     level = current_level_logging
     log.info(sys_argv)
+    if args.service:
+        print(args.service)
 
 
 if __name__ == '__main__':

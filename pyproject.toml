@@ -3,8 +3,8 @@ name = "sdi"
 description = "SDI monorepo"
 authors = ["Jose Luis Alonzo Velazquez <pepemxl@gmail.com>", "Ernesto Ortega Trujillo <eortru@gmail.com>"]
 readme = "README.md"
-repository = "git@github.com:pepemxl/system_design_notes.git"
-version = "0.0.3"
+repository = "https://github.com/pepemxl/system_design_notes.git"
+version = "0.0.4"
 packages = [ {include="monorepo"},
 { include="utils.py", from="monorepo"},
 { include="common", from="monorepo"},
