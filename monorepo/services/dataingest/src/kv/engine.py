@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
 import json
+import logging
 import os
 from typing import Optional
 # if __name__=='__main__':
@@ -14,6 +15,9 @@ from typing import Optional
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "..", "..", "..", "LOCAL_DATA", "DATA")
 DB_FULL_FILENAME = os.path.join(DATA_PATH, "db_kv.json")
 
+logging.basicConfig(format='%(asctime)s :: %(message)s')
+logging.getLogger().setLevel(logging.ERROR)
+log = logging.getLogger(__name__)
 
 @dataclass
 class KeyValueStore:
@@ -30,7 +34,8 @@ class KeyValueStore:
         try:
             del self.store[key]
         except KeyError:
-            print(f"Key '{key}' not found.")
+            log.exception(f"Key '{key}' not found.")
+            raise KeyError
 
     def save_to_file(self):
         with open(self.db_full_filename, 'w') as ptr_file:
@@ -41,9 +46,9 @@ class KeyValueStore:
             with open(self.db_full_filename, 'r') as ptr_file:
                 self.store = json.load(ptr_file)
         except FileNotFoundError:
-            print(f"File '{self.db_full_filename}' not found.")
+            log.exception(f"File '{self.db_full_filename}' not found.")
         except json.JSONDecodeError:
-            print(f"Error decoding JSON from file '{self.db_full_filename}'.")
+            log.exception(f"Error decoding JSON from file '{self.db_full_filename}'.")
 
 
 class KeyValueStore2:
@@ -61,7 +66,8 @@ class KeyValueStore2:
         if key in self.store:
             del self.store[key]
         else:
-            print(f"Key '{key}' not found.")
+            log.exception(f"Key '{key}' not found.")
+            raise KeyError
 
     def save_to_file(self):
         with open(self.db_full_filename, 'w') as ptr_file:
@@ -72,9 +78,9 @@ class KeyValueStore2:
             with open(self.db_full_filename, 'r') as ptr_file:
                 self.store = json.load(ptr_file)
         except FileNotFoundError:
-            print(f"File '{self.db_full_filename}' not found.")
+            log.exception(f"File '{self.db_full_filename}' not found.")
         except json.JSONDecodeError:
-            print(f"Error decoding JSON from file '{self.db_full_filename}'.")
+            log.exception(f"Error decoding JSON from file '{self.db_full_filename}'.")
 
 
 def test_kv_class():
@@ -85,12 +91,12 @@ def test_kv_class():
     kv_store.set("city", "Mexicali")
     kv_store.set("state", "Baja California")
 
-    print("Name:", kv_store.get("name"))
-    print("City:", kv_store.get("city"))
-    print("State:", kv_store.get("state"))
+    log.info("Name:", kv_store.get("name"))
+    log.info("City:", kv_store.get("city"))
+    log.info("State:", kv_store.get("state"))
 
     kv_store.delete("city")
-    print("City after deletion:", kv_store.get("city"))
+    log.info("City after deletion:", kv_store.get("city"))
 
 
 def test_kv_dataclass():
@@ -101,12 +107,12 @@ def test_kv_dataclass():
     kv_store.set("city", "Mexicali")
     kv_store.set("state", "Baja California")
 
-    print("Name:", kv_store.get("name"))
-    print("City:", kv_store.get("city"))
-    print("State:", kv_store.get("state"))
+    log.info("Name:", kv_store.get("name"))
+    log.info("City:", kv_store.get("city"))
+    log.info("State:", kv_store.get("state"))
 
     kv_store.delete("city")
-    print("City after deletion:", kv_store.get("city"))
+    log.info("City after deletion:", kv_store.get("city"))
     
 
 if __name__ == '__main__':
