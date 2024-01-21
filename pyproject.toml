@@ -10,7 +10,7 @@ packages = [ {include="monorepo"},
 { include="common", from="monorepo"},
 ]
 [tool.poetry.dependencies]
-python = "3.8.*"
+python = "3.10.*"
 termcolor = "^2.3.0"
 pygments = "^2.15.1"
 requests = "^2.31.0"

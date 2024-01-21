@@ -1,4 +1,4 @@
-PY := python3.8
+PY := python3.10
 VENV := venv
 REPONAME=$(basename $(pwd))
 
@@ -9,12 +9,12 @@ help:
 
 ${VENV}:
 	@echo "Create venv"
-	virtualenv ${VENV} --python ${PY}
+	${PY} -m venv ./${VENV}
 	@echo "Update pip"
-	./${VENV}/bin/python -m pip install --upgrade pip
+	./${VENV}/bin/python3 -m pip install --upgrade pip
 	./${VENV}/bin/pip install poetry
 	./${VENV}/bin/pip install -r monorepo/requirements/base.txt
-	@echo ${VENV}/bin/poetry install
+	./${VENV}/bin/poetry install
 
 .PHONY: install
 install: $(VENV)
