@@ -5,7 +5,7 @@ import json
 import os
 import time
 
-topic = 'pepe_topic'
+topic = 'stats'
 
 
 class ConnectionException(Exception):

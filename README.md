@@ -38,6 +38,24 @@ Desarrollaremos las herramientas necesarias para escalar las aplicaciones y reut
 
 Para poder crear aplicaciones lo más realista posible pasaremos algún tiempo seteando servicios gratuitos de sistemas third party comunes en la industria.
 
+Primero que nada instalemos python 3.11
+```
+sudo apt update
+sudo apt upgrade
+sudo apt install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+wget https://www.python.org/ftp/python/3.11.0/Python-3.11.0.tgz
+tar -xf Python-3.11.0.tgz
+cd Python-3.11.0
+./configure --enable-optimizations
+make -j$(nproc)
+sudo make altinstall
+```
+verificamos la instalación:
+`python3.11 --version`
+y ahora agregamos al bash:
+`nano ~/.bashrc`
+y agregamos `alias python3='/usr/local/bin/python3.11'`
+
 
 1. ESCALAR UN SISTEMA
     1. [Como escalar de cero a millones de usuarios.](documentation/como_escalar_de_cero_a_millones_de_usuarios/01_section_escalamiento.md)
