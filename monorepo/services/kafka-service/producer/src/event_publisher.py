@@ -5,7 +5,7 @@ import os
 import time
 import logging
 
-topic = 'pepe_topic'
+topic = 'stats'
 
 
 class Publisher:

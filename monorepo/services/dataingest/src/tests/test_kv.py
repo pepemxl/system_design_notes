@@ -41,6 +41,13 @@ class TestKeyValueStore(unittest.TestCase):
     def test_get_nonexistent_key(self):
         self.assertIsNone(self.kv_store.get("nonexistent_key"))
 
+    def test_multiple_instances(self):
+        self.kv_store.set("key2", "value2")
+        kv_store2 = KeyValueStore()
+        self.assertEqual("value2", self.kv_store.get("key2"))
+        # self.assertEqual("value2", kv_store2.get("key2"))
+
+
 
 class TestKeyValueStore2(unittest.TestCase):
     def setUp(self):
@@ -60,6 +67,12 @@ class TestKeyValueStore2(unittest.TestCase):
 
     def test_get_nonexistent_key(self):
         self.assertIsNone(self.kv_store.get("nonexistent_key"))
+    
+    def test_multiple_instances(self):
+        self.kv_store.set("key2", "value2")
+        kv_store2 = KeyValueStore2()
+        # self.assertEqual("value2", self.kv_store.get("key2"))
+        self.assertEqual("value2", kv_store2.get("key2"))
 
 
 if __name__ == '__main__':
