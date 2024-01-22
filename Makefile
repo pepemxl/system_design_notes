@@ -20,7 +20,7 @@ ${VENV}:
 install: $(VENV)
 	@echo "Installed project in virtual environment..."
 	@echo "Linux: Use \"source venv/bin/activate\""
-	@echo "Linux: Run \"poetry install\""
+#	@echo "Linux: Run \"poetry install\""
 	@echo ${REPONAME}
 
 
