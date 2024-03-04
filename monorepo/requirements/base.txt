@@ -12,5 +12,6 @@ pytest-html==4.0.2
 requests==2.31.0
 SQLAlchemy==2.0.22
 tqdm==4.66.1
+twilio==9.0.0
 uvicorn==0.23.2
 Werkzeug==3.0.0

@@ -1,5 +1,4 @@
 from enum import Enum
-from typing import Any, Optional
 from sqlalchemy import (
     Boolean,
     Column,
@@ -10,26 +9,25 @@ from sqlalchemy import (
     String,
     Text,
 )
-from sqlalchemy.dialects import mssql, postgresql, sqlite, mysql
-from sqlalchemy.engine.interfaces import Dialect
-
 from sqlalchemy.orm import Mapped
 from sqlalchemy.orm import mapped_column
-from sqlalchemy.schema import CreateTable
 from sqlalchemy.orm import DeclarativeBase
 from sqlalchemy.schema import ForeignKey
 from sqlalchemy.schema import MetaData
 from sqlalchemy.schema import UniqueConstraint
-from monorepo.common.env_manager import get_env_variable
-from monorepo.common.logger import get_logger
 
 
-log = get_logger(__file__, "INFO")
-metadata_obj = MetaData(schema="push_notification_system")
+# Determinar el tipo de base de datos
+db_type = 'sqlite'
+if db_type == 'sqlite':
+    metadata_obj = MetaData()
+else:
+    metadata_obj = MetaData(schema="push_notification_system")
 
 
 class Base(DeclarativeBase):
     metadata = metadata_obj
+    __table_args__ = {'schema': metadata.schema}
 
     def get_dict_repr(self):
         for key in self.__table__.columns.keys():
@@ -115,4 +113,3 @@ class TblDevices(Base):
     __table_args__ = (
         UniqueConstraint('device_token'),
     )
-

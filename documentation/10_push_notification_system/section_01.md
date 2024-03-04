@@ -57,6 +57,10 @@ Entonces recibiras la siguiente respuesta:
 }
 ```
 
+Lo cual se refleja en un mensaje 
+
+![Mensaje](../../images/10/test_twilio_01.png)
+
 Twilio provee una aplicación de ejemplo, inclusive el deployment.
 
 ![TwilioExample](../../images/10/example_01.png)
