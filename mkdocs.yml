@@ -1,0 +1,16 @@
+site_name: Notas de Diseño de Sistemas
+nav:
+  - 'Inicio': 'index.md'
+  - 'Problemas':
+    - '001_task_delayed_executor': 
+      - 'problema': 'problemas/001_task_delayed_executor/problem.md'
+      - 'solution': 'problemas/001_task_delayed_executor/solution.md'
+
+plugins:
+  - search
+  - mermaid2
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+markdown_extensions:
+  - smarty
+  - mdx_math
