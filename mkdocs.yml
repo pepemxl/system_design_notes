@@ -5,6 +5,9 @@ nav:
     - '001_task_delayed_executor': 
       - 'problema': 'problemas/001_task_delayed_executor/problem.md'
       - 'solution': 'problemas/001_task_delayed_executor/solution.md'
+    - '002_leader': 
+      - 'problema': 'problemas/002_leader/problem.md'
+      - 'solution': 'problemas/002_leader/solution.md'
 
 plugins:
   - search
