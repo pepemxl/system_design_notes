@@ -3,10 +3,11 @@ nav:
   - 'Inicio': 'index.md'
   - 'Problemas':
     - '001_task_delayed_executor': 
-      - 'problema': 'problemas/001_task_delayed_executor/problem.md'
+      - 'problem': 'problemas/001_task_delayed_executor/problem.md'
       - 'solution': 'problemas/001_task_delayed_executor/solution.md'
     - '002_leader': 
-      - 'problema': 'problemas/002_leader/problem.md'
+      - 'problem': 'problemas/002_leader/problem.md'
+      - 'faq': 'problemas/002_leader/faq.md'
       - 'solution': 'problemas/002_leader/solution.md'
 
 plugins:
