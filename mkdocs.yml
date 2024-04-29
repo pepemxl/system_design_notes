@@ -1,6 +1,9 @@
 site_name: Notas de Diseño de Sistemas
 nav:
   - 'Inicio': 'index.md'
+  - 'Diseño de sistemas':
+    - 'Stream Processing':
+      - 'MapReduce': 'stream_processing/mapreduce.md'
   - 'Problemas':
     - '001_task_delayed_executor': 
       - 'problem': 'problemas/001_task_delayed_executor/problem.md'
@@ -8,7 +11,7 @@ nav:
     - '002_leader': 
       - 'problem': 'problemas/002_leader/problem.md'
       - 'faq': 'problemas/002_leader/faq.md'
-      - 'solution': 'problemas/002_leader/solution.md'
+      - 'solution': 'problemas/002_leader/solution_01.md'
 
 plugins:
   - search
