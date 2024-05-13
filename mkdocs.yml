@@ -1,30 +1,36 @@
 site_name: Notas de Diseño de Sistemas
 nav:
-  - 'Inicio': 'index.md'
   - 'Diseño de sistemas':
-    - 'Introducción': '00_system_design/intro.md'
-    - 'Almacenamiento Distribuido': '00_system_design/01_almacenamiento_distribuido/intro.md'
-    - 'Procesamiento Distribuido': '00_system_design/02_procesamiento_distribuido/intro.md'
-    - 'Gestion de Datos en Memoria': '00_system_design/03_gestion_de_datos_en_tiempo_real/intro.md'
-    - 'Capa de Almacenamiento': '00_system_design/04_capa_de_almacenamiento_de_datos_en_memoria/intro.md'
-    - 'Gestion de Metadatos': '00_system_design/05_gestion_de_metadatos/intro.md'
-    - 'Escalabilidad Horizontal': '00_system_design/06_escalabilidad_horizontal/intro.md'
+    - 'Introducción': 
+      - 'Inicio': 'index.md'
+      - 'Introducción': '00_system_design/intro.md'
+      - 'Almacenamiento Distribuido': '00_system_design/01_almacenamiento_distribuido/intro.md'
+      - 'Procesamiento Distribuido': '00_system_design/02_procesamiento_distribuido/intro.md'
+      - 'Gestion de Datos en Memoria': '00_system_design/03_gestion_de_datos_en_tiempo_real/intro.md'
+      - 'Capa de Almacenamiento': '00_system_design/04_capa_de_almacenamiento_de_datos_en_memoria/intro.md'
+      - 'Gestion de Metadatos': '00_system_design/05_gestion_de_metadatos/intro.md'
+      - 'Escalabilidad Horizontal': '00_system_design/06_escalabilidad_horizontal/intro.md'
     - 'Stream Processing':
       - 'MapReduce': 'stream_processing/mapreduce.md'
   - 'Problemas':
     - '001_task_delayed_executor': 
-      - 'problem': 'problemas/001_task_delayed_executor/problem.md'
-      - 'solution': 'problemas/001_task_delayed_executor/solution.md'
+      - 'Problema': 'problemas/001_task_delayed_executor/problem.md'
+      - 'Solución': 'problemas/001_task_delayed_executor/solution.md'
     - '002_leader': 
-      - 'problem': 'problemas/002_leader/problem.md'
-      - 'faq': 'problemas/002_leader/faq.md'
-      - 'solution': 'problemas/002_leader/solution_01.md'
+      - 'Problema': 'problemas/002_leader/problem.md'
+      - 'FAQ': 'problemas/002_leader/faq.md'
+      - 'Solución': 'problemas/002_leader/solution.md'
+      - 'Solución 1': 'problemas/002_leader/solution_01.md'
 
 plugins:
   - search
   - mermaid2
 extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 markdown_extensions:
   - smarty
   - mdx_math
+  - pymdownx.arithmatex
+  - pymdownx.highlight
