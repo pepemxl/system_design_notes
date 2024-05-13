@@ -44,7 +44,8 @@ graph TD;
 
 El primer problema a notar es que este map reduce puede tomar mucho tiempo si hay muchos usuarios en la dimension a calcular, por ejemplo, habra muchos usuarios en cada bucket edad(dimensión), ya que solo tenemos 6 buckets.
 
-Para mejorar el rendimiento del reducer(Reduce Stage) debemos asegurarnos que cada reducer no tenga demasiadas llaves, donde una posible solución es distribuir la carga entre los reducers de la siguiente manera:
+Para mejorar el rendimiento del reducer(Reduce Stage) debemos asegurarnos que cada reducer no tenga demasiadas llaves ( ver ejemplo con demasiadas llaves), donde una posible solución es distribuir la carga entre los reducers de la siguiente manera:
+
 
 
 - **Map Stage**: Emitiremos/crearemos tuplas `(user_id, dimension, likes_counter, log2(likes_counter))`. Aquí `log2(likes_counter)` es truncado utilizando la función floor.
@@ -77,5 +78,51 @@ Para actualizar el sistema en tiempo real tenemos algunos tradeoff que considera
 - Opción 2. 
     - En lugar de solo mantener los primeros K usuarios, podemos crear particiones en distintos server basadas en el número de likes, y asi monitorear los likes de todos los usuarios. Entonces cuando
 
+| 1,2,3,4,5,6,7,8,9,10| 11,12,...,20| 99,999,990...100,000,000|
 
 
+
+## Ejemplo con demasiadas llaves
+
+Supongamos que estamos considerando todos los ususarios en el bucket B6(edad >= 50), y este bucket contiene la mitad de mis usuarios.
+
+| Numero de Usuarios | No. de likes |
+|---|---|
+| 10 | 1 |
+| 10 | 2 |
+| ... | ... |
+| 10 | 100,000,000 |
+
+Entonces el bucket B6 tiene 1000,000,000.
+
+Si edad >= 50
+
+`usuario_id, edad, likes_counter`
+
+- usuario_id: 123
+- edad: 51
+- likes_counter: 200
+
+
+likes_counter(usuario_id = 123) += 1
+
+Usando log2 creamos una nueva partición o buckets
+
+| Numero de Usuarios | No. de likes | `log2(likes_counter)`|
+|---|---|---|
+| 10 | 1 | 0 |
+| 10 | 2 | 1 |
+| 10 | 3 | 1 |
+| 10 | 4 | 2 |
+| 10 | 5 | 2 |
+| 10 | 6 | 2 |
+| 10 | 7 | 2 |
+| 10 | 8 | 3 |
+| 10 | 9 | 3 |
+| 10 | 10 | 3 |
+| ... | ... | ... |
+| ... | ... | ... |
+| 10 | 100,000,000 | 26|
+
+
+26 cajistas

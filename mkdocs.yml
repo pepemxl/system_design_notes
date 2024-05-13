@@ -11,7 +11,9 @@ nav:
       - 'Gestion de Metadatos': '00_system_design/05_gestion_de_metadatos/intro.md'
       - 'Escalabilidad Horizontal': '00_system_design/06_escalabilidad_horizontal/intro.md'
     - 'Stream Processing':
-      - 'MapReduce': 'stream_processing/mapreduce.md'
+      - 'MapReduce': 
+        - 'intro': 'stream_processing/mapreduce.md'
+        - 'task 01': 'stream_processing/map_reduce_example_01.md'
   - 'Problemas':
     - '001_task_delayed_executor': 
       - 'Problema': 'problemas/001_task_delayed_executor/problem.md'
