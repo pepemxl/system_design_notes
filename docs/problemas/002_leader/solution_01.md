@@ -71,8 +71,11 @@ graph TD;
 
 Para actualizar el sistema en tiempo real tenemos algunos tradeoff que considerar entre exactitud y eficiencia computacional.
 
-- Opción 1. Para cada dimensión mantendremos monitoreo de los primeros K usuarios(Top K) en esa dimensión, donde K puede un número tan grande como 10,000, aunque lo podemos crear en función de las combinaciones de dimensiones y RAM disponible para está tarea. Para los Top K usuarios, cada vez que reciben un like, actualizadmos el número de `likes_counter`. Si el rank de este usuario se mueve con esta actualización actualizamos el rank del usuario y de todos los que serían desplazados. Además es posible trackear usuarios susceptibles a recibir grandes cantidades de likes en cortos periodos de tiempo. Para disminuir el overhead I/O podemos mantenerlos en una memoria cache y hacer flush de estas actualizaciones periodicamente.
-- Opción 2. Para la actualización de la cola restante de usuarios(usualmente llamada la cola larga o long tail), para cada dimensión creamos una función de mapeo `likes_counter` a `rank`.
+- Opción 1. 
+    - Para cada dimensión mantendremos monitoreo de los primeros K usuarios(Top K) en esa dimensión, donde K puede un número tan grande como 10,000, aunque lo podemos crear en función de las combinaciones de dimensiones y RAM disponible para está tarea. Para los Top K usuarios, cada vez que reciben un like, actualizadmos el número de `likes_counter`. Si el rank de este usuario se mueve con esta actualización actualizamos el rank del usuario y de todos los que serían desplazados. Además es posible trackear usuarios susceptibles a recibir grandes cantidades de likes en cortos periodos de tiempo. Para disminuir el overhead I/O podemos mantenerlos en una memoria cache y hacer flush de estas actualizaciones periodicamente.
+    - Para la actualización de la cola restante de usuarios(usualmente llamada la cola larga o long tail), para cada dimensión creamos una función de mapeo `likes_counter` a `rank`. Para esto crearemos esta función que será ejecutada por un trabajo nocturno, haciendo un map reduce similar al que hicimos en el sistema offline. Solo que en lugar de  la salida `(user_id, dimension, rank)` tendremos `(likes_counter, dimension, rank)`, con esto tenemos la infomración necesaria para el mapeo `likes_counter` a `rank`, si tenemos demasiados valores distintos `likes_counter` entonces usamos `(log2(likes_counter), dimension, rank)` e interpolamos la posición de un usuario entre dos puntos.
+- Opción 2. 
+    - En lugar de solo mantener los primeros K usuarios, podemos crear particiones en distintos server basadas en el número de likes, y asi monitorear los likes de todos los usuarios. Entonces cuando
 
 
 
