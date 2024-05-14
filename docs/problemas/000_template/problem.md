@@ -1,28 +1,12 @@
 #  Nombre del Problema
 
-## Descripción
+## Descripción del Problema
 
 
-## Requisitos Funcionales
+## Preguntas
 
 1. **Task1:** El sistema ...
 2. **Task2:** El sistema ...
-3. **Task3:** El sistema ...
-4. **Task4:** El sistema ...
 
-## Requisitos No Funcionales
-
-1. **Eficiencia:** El sistema ...
-2. **Escalabilidad:** El sistema ...
-3. **Fiabilidad:** El sistema ...
-
-## Consideraciones Adicionales
-
-- El sistema ...
-- Se debe ...
-
----
-
-Durante las entrevistas, se espera que se discuta y diseñe una solución que cumpla con estos requisitos, teniendo en cuenta los principios de diseño de sistemas distribuidos.
 
 
