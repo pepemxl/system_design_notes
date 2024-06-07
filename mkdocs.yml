@@ -23,6 +23,14 @@ nav:
       - 'FAQ': 'problemas/002_leader/faq.md'
       - 'Solución': 'problemas/002_leader/solution.md'
       - 'Solución 1': 'problemas/002_leader/solution_01.md'
+    - '003_search_typeahead':
+      - 'Problema': 'problemas/003_search_typeahead/problem.md'
+      - 'FAQ': 'problemas/003_search_typeahead/faq.md'
+      - 'Solución': 'problemas/003_search_typeahead/solution.md'
+    - '004_build_data_infra':
+      - 'Problema': 'problemas/004_build_data_infra/problem.md'
+      - 'FAQ': 'problemas/004_build_data_infra/faq.md'
+      - 'Solución': 'problemas/004_build_data_infra/solution.md'
 
 plugins:
   - search
