@@ -1,6 +1,9 @@
 from flask import Flask, request, jsonify
 import os
 import redis
+import tracemalloc
+
+tracemalloc.start()
 
 
 app = Flask(__name__)
@@ -57,6 +60,16 @@ def search():
     query = request.args.get('q', '').lower()
     suggestions = [item for item in r.smembers('data') if item.lower().startswith(query)]
     return jsonify(suggestions)
+
+
+@app.route('/memory', methods=['GET'])
+def memory():
+    snapshot = tracemalloc.take_snapshot()
+    top_stats = snapshot.statistics('lineno')
+
+    return jsonify({
+        "memory_stats": str(top_stats[:10])
+    })
 
 
 if __name__ == '__main__':
