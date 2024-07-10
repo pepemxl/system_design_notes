@@ -13,7 +13,7 @@ My needs:
     - Availability: it is needed but not critical
     - Consistency: it is more important than availability
 
-DB options: Goku, Redis, Memcached
+DB options: OpenTSBD, Redis, Memcached
 
 Another important point to consider is that we need to do map reduce.
 
