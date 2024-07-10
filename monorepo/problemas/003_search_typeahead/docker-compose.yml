@@ -1,17 +1,67 @@
 version: '3'
 
 services:
+  redis:
+    image: "redis:alpine"
+    container_name: db_redis
+    ports: 
+      - 6379:6379
+
   backend:
     build: 
       context: ./backend
     ports:
-      - "3000:3000"
+      - "5001:5000"
 
   backend2:
     build:
       context: ./backend2
     ports:
-      - "5001:5000"
+      - "5002:5000"
+  
+  backend3:
+    build:
+      context: ./backend3
+    ports:
+      - "5003:5000"
+  
+  backend4:
+    build:
+      context: ./backend4
+    ports:
+      - "5004:5000"
+  
+  backend5:
+    build:
+      context: ./backend5
+    ports:
+      - "5005:5000"
+  
+  backend6:
+    build:
+      context: ./backend6
+    ports:
+      - "5006:5000"
+  
+  backend7:
+    build:
+      context: ./backend7
+    ports:
+      - "5007:5000"
+  
+  backend8:
+    build:
+      context: ./backend8
+    ports:
+      - "5008:5000"
+
+  backend_trie:
+    build:
+      context: ./backend_trie
+    ports:
+      - "5101:5000"
+    depends_on:
+      - redis
 
   frontend:
     build: 
@@ -21,3 +71,10 @@ services:
     depends_on:
       - backend
       - backend2
+      - backend3
+      - backend4
+      - backend5
+      - backend6
+      - backend7
+      - backend8
+      - backend_trie

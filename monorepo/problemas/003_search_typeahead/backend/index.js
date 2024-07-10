@@ -1,12 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 5000;
 
-/*const data = [
-    'apple', 'banana', 'grape', 'orange', 'pineapple', 'strawberry', 'watermelon'
-];*/
 
-const data = [
+const preData = [
     "Manzana", "Banana", "Uva", "Naranja", "Piña", "Fresa", "Sandía", "Melón", 
     "Pera", "Kiwi", "Mango", "Durazno", "Cereza", "Limón", "Lima", "Papaya", 
     "Frambuesa", "Mora", "Arándano", "Granada", "Higo", "Mandarina", "Nectarina", 
@@ -24,6 +21,19 @@ const data = [
     "Batata", "Jícama", "Chícharos", "Albahaca", "Cilantro"
 ];
 
+function augmentedData(n = 100, preData = []) {
+    let data = [];
+    preData.sort();
+    preData.forEach(item => {
+        for (let i = 0; i < n; i++) {
+            let aux = item + "_" + String(i).padStart(4, '0');
+            data.push(aux);
+        }
+    });
+    return data;
+};
+
+const data = augmentedData(100, preData);
 
 
 app.get('/search', (req, res) => {

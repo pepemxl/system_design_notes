@@ -1,21 +1,10 @@
 # Solución
 
-Usualmente durante la entevistas no se espera que se codifique toda la solución, si no que se haga utilización de alguna interface, y se expansa su funcionalidad, en este caso atendiendo los requerimientos que podrían o no ser mencionados durante la descripción del problema.
 
-```python
-class ClaseInterface:
-    def __init__(self):
-        pass
 
-    def task1(self, task, delay):
-        pass
 
-    def task2(self):
-        pass
+Definamos las siguientes variables que utilizaremos durante el resto de la solución del problema:
 
-    def task3(self):
-        pass
-
-    def task4(self):
-        pass
-```
+- $n :=$ el número de terminos que los usuarios han buscado en este sistema.
+- $r :=$ el número de resultados con el prefijo dado por el usuario.
+- $s :=$ la lngitud del string dado por el usuario.

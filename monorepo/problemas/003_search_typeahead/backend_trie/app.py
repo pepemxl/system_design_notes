@@ -1,7 +1,13 @@
 from flask import Flask, request, jsonify
+import os
+import redis
 
 
 app = Flask(__name__)
+# Configurar conexión a Redis
+redis_host = os.getenv('REDIS_HOST', 'redis')
+redis_port = int(os.getenv('REDIS_PORT', 6379))
+r = redis.Redis(host=redis_host, port=redis_port, decode_responses=True)
 
 pre_data = [
     "Manzana", "Banana", "Uva", "Naranja", "Piña", "Fresa", "Sandía", "Melón", 
@@ -34,11 +40,21 @@ def augmented_data(pre_data: list, n_samples: int = 100):
 
 data = augmented_data(pre_data=pre_data, n_samples=1000)
 
+# Inicializar Redis con los datos desde el archivo
+def initialize_redis(data=data):
+    if not r.exists('data_initialized'):
+        for word in data:
+            item = word.strip()
+            r.sadd('data', item)
+        r.set('data_initialized', '1')
+
+initialize_redis()
+
 
 @app.route('/search', methods=['GET'])
 def search():
     query = request.args.get('q', '').lower()
-    suggestions = [item.lower() for item in data if item.lower().startswith(query)]
+    suggestions = [item for item in r.smembers('data') if item.lower().startswith(query)]
     return jsonify(suggestions)
 
 
