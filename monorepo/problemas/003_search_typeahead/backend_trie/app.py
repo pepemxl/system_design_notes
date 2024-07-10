@@ -40,7 +40,8 @@ def augmented_data(pre_data: list, n_samples: int = 100):
 
 data = augmented_data(pre_data=pre_data, n_samples=1000)
 
-# Inicializar Redis con los datos desde el archivo
+# Inicializar Redis con los datos desde el arreglo data
+# tenemos dos keys data_initialized que guarda el status y data que guarda la lista de datos
 def initialize_redis(data=data):
     if not r.exists('data_initialized'):
         for word in data:
