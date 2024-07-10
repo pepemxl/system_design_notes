@@ -38,7 +38,7 @@ backend_services = {
     },
     "service_101": {
         "port": 5101,
-        "name": "flask_trie_python_3.9",
+        "name": "flask_redis_python_3.9",
     },
 }
 
