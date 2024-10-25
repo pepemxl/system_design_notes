@@ -1,8 +1,8 @@
-#  Product Feed System
+# Product Input Feed System
 
 ## Descripción del Problema
 
-El objetivo principal de un Product Feed System es facilitar la gestión y distribución de la información de productos de manera eficiente y automatizada.
+El objetivo principal de un Product Input Feed System es facilitar la ingestión y distribución de la información de productos de manera eficiente y automatizada.
 
 Consideremos las publicaciones en instagram, algunas de ellas son imagenes de productos que comerciantes suben y cuando un usuario les da click los dirige hacia la página del comerciante. Sin embargo estas publicaciones necesitan mantenimiento donde se podria actualizar el precio, la imagen u otros detalles de la publicación.
 
