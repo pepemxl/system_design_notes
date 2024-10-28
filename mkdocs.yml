@@ -1,5 +1,7 @@
 site_name: Notas de Diseño de Sistemas
 nav:
+#  - Blog: blog_index.md
+#    - Post 1: blog/post_001.md
   - 'Diseño de sistemas':
     - 'Introducción': 
       - 'Inicio': 'index.md'
@@ -15,32 +17,82 @@ nav:
         - 'intro': 'stream_processing/mapreduce.md'
         - 'task 01': 'stream_processing/map_reduce_example_01.md'
   - 'Problemas':
-    - '001_task_delayed_executor': 
+    - '001-task_delayed_executor': 
       - 'Problema': 'problemas/001_task_delayed_executor/problem.md'
       - 'Solución': 'problemas/001_task_delayed_executor/solution.md'
-    - '002_leader': 
+    - '002-leader': 
       - 'Problema': 'problemas/002_leader/problem.md'
       - 'FAQ': 'problemas/002_leader/faq.md'
       - 'Solución': 'problemas/002_leader/solution.md'
       - 'Solución 1': 'problemas/002_leader/solution_01.md'
-    - '003_search_typeahead':
+    - '003-search_typeahead':
       - 'Problema': 'problemas/003_search_typeahead/problem.md'
       - 'FAQ': 'problemas/003_search_typeahead/faq.md'
       - 'Solución': 'problemas/003_search_typeahead/solution.md'
-    - '004_build_data_infra':
+    - '004-build_data_infra':
       - 'Problema': 'problemas/004_build_data_infra/problem.md'
       - 'FAQ': 'problemas/004_build_data_infra/faq.md'
       - 'Solución': 'problemas/004_build_data_infra/solution.md'
+    - '005-product-feed-system':
+      - 'Problema': 'problemas/005_product_feed_system/problem.md'
+      - 'FAQ': 'problemas/005_product_feed_system/faq.md'
+      - 'Solución': 'problemas/005_product_feed_system/solution.md'
+    - '006-homefeed':
+      - 'Problema': 'problemas/006_homefeed/problem.md'
+      - 'FAQ': 'problemas/006_homefeed/faq.md'
+      - 'Solución': 'problemas/006_homefeed/solution.md'
 
+site_url: https://liang2kl.github.io/mkdocs-blogging-plugin/
+site_description: Un sitio para aprender de sistemas distribuidos.
+site_author: Jose Alonzo
+# theme: 
+  # name: bootstrap
+theme: 
+  name: material
+# theme: 
+#   name: dracula
+# theme:
+#   name: readthedocs
+#   highlightjs: true
+#   hljs_languages:
+#     - yaml
+#     - rust
+  # locale: es
+  # custom_dir: my_theme_customizations/
+  #static_templates:
+  #  - sitemap.html
+  include_sidebar: false
 plugins:
   - search
   - mermaid2
+  # - blogging:
+  #   dirs:
+  #     - blog
+  #   categories:
+  #       - name: reviews
+  #         dirs:
+  #           - reviews
+#    path: blog
+#    - posts:
+#      - blogs/*.md
+#    blog_index_template: blog_index.html
+    # path: blog
+    # posts:
+    #  - blogs/*.md
+    # blog_index_template: blog_index.html
 extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg-full.js
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+# extra_css:
+#   - css/extra.css
+#   - css/second_extra.css
 markdown_extensions:
   - smarty
   - mdx_math
   - pymdownx.arithmatex
   - pymdownx.highlight
+#  - toc:
+#    permalink: true
+#  - footnotes
+#  - meta
