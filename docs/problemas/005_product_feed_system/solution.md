@@ -35,3 +35,6 @@ Los vendedores tendrán acceso a dos tipos de API:
 
 
 
+## Alta disponibilidad
+
+<img src="../../images/sdi_product_attribute_feed_high_availability.png" width="75%"/>
