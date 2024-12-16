@@ -4,3 +4,6 @@ Production engineering combines software, systems and network engineering with A
 
 
 
+# Referencias:
+
+1. meta description [link](https://www.metacareers.com/areas-of-work/pe/?p[sub_teams][0]=Production%20Engineering&sub_teams[0]=Production%20Engineering)
