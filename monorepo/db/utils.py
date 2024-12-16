@@ -41,6 +41,7 @@ def print_schema_definition(metadata_obj):
 
 if __name__ == '__main__':
     print(TblUsers())
-    print_schema_definition(TblUsers().metadata)
-    ddl_tbl = get_mysql_ddl_for_table(TblUsers())
-    print(ddl_tbl)
+    print(TblUsers().metadata.schema)
+    # print_schema_definition(TblUsers().metadata)
+    # ddl_tbl = get_mysql_ddl_for_table(TblUsers())
+    # print(ddl_tbl)

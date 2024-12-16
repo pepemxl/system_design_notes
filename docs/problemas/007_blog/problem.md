@@ -2,7 +2,7 @@
 
 ## Descripción del Problema
 
-Tu tarea consiste en diseñar un blog
+Tu tarea consiste en diseñar un blog similar a facebook. Donde un usuario puede publicar post(text + image)
 
 
 ## Preguntas
